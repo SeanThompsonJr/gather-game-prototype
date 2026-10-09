@@ -4,12 +4,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Gather &amp; Game Events</title>
-<meta name="description" content="Gather & Game runs gaming spaces at conventions across Florida: tabletop one-shots, casual gaming areas and tournaments.">
-<link rel="icon" href="images/logo.png">
+<title>Gather &amp; Game Events | Convention Gaming in Jacksonville, FL</title>
+<meta name="description" content="Gather &amp; Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida, like Bold Matsuri and Jax Pop Con.">
+<link rel="canonical" href="https://seanthompsonjr.github.io/gather-game-prototype/">
+<meta name="theme-color" content="#0A1838">
+<link rel="icon" href="images/logo-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="images/logo-mark.png">
+
+<!-- Link previews (Instagram, Discord, iMessage, Facebook, X) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gather &amp; Game Events">
+<meta property="og:title" content="Gather &amp; Game Events | Gaming at Anime &amp; Pop Culture Conventions">
+<meta property="og:description" content="Gather &amp; Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida, like Bold Matsuri and Jax Pop Con.">
+<meta property="og:url" content="https://seanthompsonjr.github.io/gather-game-prototype/">
+<meta property="og:image" content="https://seanthompsonjr.github.io/gather-game-prototype/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gather &amp; Game logo with the line: Pull up a chair.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gather &amp; Game Events | Gaming at Anime &amp; Pop Culture Conventions">
+<meta name="twitter:description" content="Gather &amp; Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida, like Bold Matsuri and Jax Pop Con.">
+<meta name="twitter:image" content="https://seanthompsonjr.github.io/gather-game-prototype/images/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Gather & Game Events",
+  "alternateName": "Gather & Game",
+  "url": "https://seanthompsonjr.github.io/gather-game-prototype/",
+  "logo": "https://seanthompsonjr.github.io/gather-game-prototype/images/logo-mark.png",
+  "description": "Gather & Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Jacksonville", "addressRegion": "FL", "addressCountry": "US" },
+  "areaServed": { "@type": "State", "name": "Florida" },
+  "knowsAbout": ["Tabletop role-playing games", "Dungeons & Dragons", "Daggerheart", "Marvel Multiverse RPG", "Video game tournaments", "Fighting games", "Anime conventions", "Pop culture conventions", "Comic cons"],
+  "sameAs": [
+    "https://www.instagram.com/gathergameevents",
+    "https://www.linkedin.com/company/gather-game-events/",
+    "https://linktr.ee/gathergame"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..100,800..900&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #0A1838;
@@ -220,10 +259,19 @@
   .recent { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
   @media (max-width: 860px) { .recent { grid-template-columns: 1fr; } }
   .cons { list-style: none; margin: 1.75rem 0 0; padding: 0; display: grid; gap: .6rem; }
-  .cons li { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; background: var(--ink-2); border-left: 4px solid var(--gold); border-radius: 8px; padding: .8rem 1rem; font: 800 1.3rem/1.1 var(--display); font-stretch: 85%; }
+  .cons li { display: grid; gap: .2rem; background: var(--ink-2); border-left: 4px solid var(--gold); border-radius: 8px; padding: .85rem 1rem; }
+  .cons b { font: 800 1.35rem/1.1 var(--display); font-stretch: 85%; }
+  .cons span { color: var(--paper-dim); font-size: .95rem; }
   .recent .alt { margin-top: 1.5rem; color: var(--paper-dim); }
-  .mosaic { columns: 2; column-gap: .75rem; }
-  .mosaic .crop { break-inside: avoid; margin-bottom: .75rem; border-radius: 12px; }
+  /* Every photo is cropped to the same 4:3 shape and tinted ink-to-cyan so the
+     low-res Instagram crops read as one set. Swap for full-color photos once
+     the client sends originals. */
+  .photos { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .photo { position: relative; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; background: var(--glyph); isolation: isolate; }
+  .photo .crop { position: absolute; inset: 0; filter: grayscale(1) contrast(1.15) brightness(1.05); mix-blend-mode: multiply; }
+  .photo--lift .crop { filter: grayscale(1) contrast(1.2) brightness(1.5); }
+  .photo::after { content: ""; position: absolute; inset: 0; background: var(--ink); mix-blend-mode: lighten; }
+  .photo::before { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; box-shadow: inset 0 0 0 2px rgba(39,196,245,.35); }
   .credit { font-size: .85rem; color: var(--paper-dim); margin-top: .25rem; }
 
   /* Events */
@@ -347,8 +395,8 @@
         <img class="half-l" src="images/logo-mark.png" alt="" width="230" height="230">
         <img class="half-r" src="images/logo-mark.png" alt="" width="230" height="230">
       </div>
-      <h1 id="hero-title">Pull up a chair.</h1>
-      <p>Gather &amp; Game runs the gaming spaces at conventions like Ocala Comic Con. Roll for initiative, grab a controller, or meet your next player two.</p>
+      <h1 id="hero-title"><span class="sr-only">Gather &amp; Game Events: </span>Pull up a chair.</h1>
+      <p>Gather &amp; Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida. Roll for initiative, grab a controller, or meet your next player two.</p>
       <div class="hero-actions">
         <a class="btn btn--primary" href="#events">See where we'll be next</a>
         <a class="btn btn--ghost" href="#contact">Get in touch</a>
@@ -366,7 +414,7 @@
     <div class="wrap">
       <div class="play-head">
         <h2 id="play-title">Every kind of player has a seat</h2>
-        <p class="lede">First-timers, lifelong dungeon crawlers and button mashers all end up at the same table. Here's what we set up.</p>
+        <p class="lede">First-timers, lifelong dungeon crawlers and anime fighting game fans all end up at the same table. Here's what we set up at every con.</p>
       </div>
 
       <div class="play-grid">
@@ -396,7 +444,7 @@
             <li><b>P3</b>Open</li>
             <li><b>P4</b>Open</li>
           </ul>
-          <p class="games">Mario Kart, Dragon Ball, Avatar Legends and more fan favorites.</p>
+          <p class="games">Mario Kart, Dragon Ball, Avatar Legends and more fan-favorite video games and anime fighting games.</p>
         </article>
 
         <article class="bracket" aria-labelledby="br-title">
@@ -423,20 +471,20 @@
     <div class="wrap recent">
       <div>
         <h2 id="recent-title">Where we've been</h2>
-        <p class="lede">We bring a whole gaming space to the convention floor: tabletop tables, a drop-in console area and tournament brackets, all in one spot where strangers become teammates.</p>
+        <p class="lede">From anime festivals to comic cons, we bring a whole gaming space to the convention floor: tabletop tables, a drop-in console area and tournament brackets, all in one spot where strangers become teammates.</p>
         <ul class="cons" aria-label="Conventions we've played at">
-          <li>Ocala Comic Con</li>
-          <li>Convention name <span class="tag">Sample</span></li>
-          <li>Convention name <span class="tag">Sample</span></li>
+          <li><b>Bold Matsuri</b><span>Jacksonville's anime and cosplay festival</span></li>
+          <li><b>Jax Pop Con Vol. 3</b><span>Pop culture con at the Jacksonville Main Library</span></li>
+          <li><b>Ocala Comic Con</b><span>Ocala, Florida</span></li>
         </ul>
         <p class="alt">Organizing a convention? <a href="#contact">Get in touch</a>.</p>
       </div>
       <figure style="margin:0">
-        <div class="mosaic">
-          <div class="crop" role="img" aria-label="Kids and teens playing video games together at the convention" style="--x:392;--y:466;--w:200;--h:80"></div>
-          <div class="crop" role="img" aria-label="Two players focused on a match in the casual gaming area" style="--x:830;--y:132;--w:120;--h:170"></div>
-          <div class="crop" role="img" aria-label="A group gathered around a tabletop game with dice and a battle map" style="--x:385;--y:645;--w:210;--h:85"></div>
-          <div class="crop" role="img" aria-label="A player holding a controller during a match" style="--x:22;--y:300;--w:180;--h:100"></div>
+        <div class="photos">
+          <div class="photo"><div class="crop" role="img" aria-label="Two teens focused on a video game match in a convention gaming area" style="--x:805;--y:150;--w:148;--h:111"></div></div>
+          <div class="photo"><div class="crop" role="img" aria-label="Players around a tabletop RPG battle map with dice at a convention" style="--x:445;--y:642;--w:117;--h:88"></div></div>
+          <div class="photo"><div class="crop" role="img" aria-label="Kids and teens playing console games together at a convention" style="--x:470;--y:460;--w:117;--h:88"></div></div>
+          <div class="photo photo--lift"><div class="crop" role="img" aria-label="Close-up of a player's hands on a game controller" style="--x:40;--y:300;--w:133;--h:100"></div></div>
         </div>
         <figcaption class="credit">Photos from @gathergameevents on Instagram</figcaption>
       </figure>
