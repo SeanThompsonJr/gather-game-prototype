@@ -93,7 +93,7 @@
     font-weight: 900;
     font-stretch: 72%;
     line-height: .95;
-    letter-spacing: -.01em;
+    letter-spacing: 0;
     margin: 0;
     text-wrap: balance;
   }
@@ -189,9 +189,10 @@
   .hero-mark { position: relative; width: clamp(170px, 24vw, 230px); aspect-ratio: 1; margin: 0 auto 1.75rem; animation: lock .4s var(--ease-out) .95s; }
   .hero-mark img { position: absolute; inset: 0; width: 100%; height: 100%; }
   .hero h1 {
-    font-size: clamp(3.5rem, 12vw, 8.5rem);
-    font-stretch: 62%;
-    line-height: .88;
+    font-size: clamp(3.5rem, 11vw, 8rem);
+    font-stretch: 68%;
+    letter-spacing: .02em;
+    line-height: .92;
   }
   .hero p { margin: 1.25rem auto 0; color: var(--paper-dim); font-size: clamp(1.125rem, 2vw, 1.3rem); max-width: 40ch; }
   .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 2rem; }
@@ -268,7 +269,7 @@
      the client sends originals. */
   .photos { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
   .photo { position: relative; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; background: var(--glyph); isolation: isolate; }
-  .photo .crop { position: absolute; inset: 0; filter: grayscale(1) contrast(1.15) brightness(1.05); mix-blend-mode: multiply; }
+  .photo .crop, .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.15) brightness(1.05); mix-blend-mode: multiply; }
   .photo--lift .crop { filter: grayscale(1) contrast(1.2) brightness(1.5); }
   .photo::after { content: ""; position: absolute; inset: 0; background: var(--ink); mix-blend-mode: lighten; }
   .photo::before { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; box-shadow: inset 0 0 0 2px rgba(39,196,245,.35); }
@@ -483,7 +484,7 @@
         <div class="photos">
           <div class="photo"><div class="crop" role="img" aria-label="Two teens focused on a video game match in a convention gaming area" style="--x:805;--y:150;--w:148;--h:111"></div></div>
           <div class="photo"><div class="crop" role="img" aria-label="Players around a tabletop RPG battle map with dice at a convention" style="--x:445;--y:642;--w:117;--h:88"></div></div>
-          <div class="photo"><div class="crop" role="img" aria-label="Kids and teens playing console games together at a convention" style="--x:470;--y:460;--w:117;--h:88"></div></div>
+          <div class="photo"><img src="images/cosplay-gaming.jpg" alt="Two attendees, one in Joker cosplay, chatting at a PlayStation station in a convention gaming area" width="600" height="450" loading="lazy"></div>
           <div class="photo photo--lift"><div class="crop" role="img" aria-label="Close-up of a player's hands on a game controller" style="--x:40;--y:300;--w:133;--h:100"></div></div>
         </div>
         <figcaption class="credit">Photos from @gathergameevents on Instagram</figcaption>
