@@ -247,14 +247,6 @@
   .bracket-art text { font: 800 15px var(--display); font-stretch: 80%; }
   @media (max-width: 420px) { .bracket { grid-template-columns: 1fr; } }
 
-  /* Photo crops from their Instagram grid (prototype stand-ins) */
-  .crop {
-    aspect-ratio: var(--w) / var(--h);
-    background-image: url(images/first-six-post.png);
-    background-repeat: no-repeat;
-    background-size: calc(971 / var(--w) * 100%) auto;
-    background-position: calc(var(--x) / (971 - var(--w)) * 100%) calc(var(--y) / (851 - var(--h)) * 100%);
-  }
 
   /* Recent */
   .recent { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
@@ -264,13 +256,13 @@
   .cons b { font: 800 1.35rem/1.1 var(--display); font-stretch: 85%; }
   .cons span { color: var(--paper-dim); font-size: .95rem; }
   .recent .alt { margin-top: 1.5rem; color: var(--paper-dim); }
-  /* Every photo is cropped to the same 4:3 shape and tinted ink-to-cyan so the
-     low-res Instagram crops read as one set. Swap for full-color photos once
-     the client sends originals. */
+  /* Every photo is cropped to the same 4:3 shape and tinted ink-to-cyan so
+     shots from different Instagram posts read as one set. Drop the tint for
+     full-color photos once the client sends originals. */
   .photos { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
   .photo { position: relative; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden; background: var(--glyph); isolation: isolate; }
-  .photo .crop, .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.15) brightness(1.05); mix-blend-mode: multiply; }
-  .photo--lift .crop { filter: grayscale(1) contrast(1.2) brightness(1.5); }
+  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.15) brightness(1.05); mix-blend-mode: multiply; }
+  .photo--lift img { filter: grayscale(1) contrast(1.2) brightness(1.5); }
   .photo::after { content: ""; position: absolute; inset: 0; background: var(--ink); mix-blend-mode: lighten; }
   .photo::before { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; box-shadow: inset 0 0 0 2px rgba(39,196,245,.35); }
   .credit { font-size: .85rem; color: var(--paper-dim); margin-top: .25rem; }
@@ -484,8 +476,8 @@
         <div class="photos">
           <div class="photo"><img src="images/tabletop-group.jpg" alt="A tabletop RPG group around a battle map and game master screen at a convention" width="600" height="450" loading="lazy"></div>
           <div class="photo"><img src="images/big-screen-gaming.jpg" alt="Players watching a fighting game match on a big projector screen in a convention gaming area" width="600" height="450" loading="lazy"></div>
-          <div class="photo"><img src="images/cosplay-gaming.jpg" alt="Two attendees, one in Joker cosplay, chatting at a PlayStation station in a convention gaming area" width="600" height="450" loading="lazy"></div>
-          <div class="photo photo--lift"><div class="crop" role="img" aria-label="Close-up of a player's hands on a game controller" style="--x:40;--y:300;--w:133;--h:100"></div></div>
+          <div class="photo"><img src="images/gm-table.jpg" alt="Overhead view of a Marvel tabletop RPG game in progress, with a game master screen, grid map and tokens" width="600" height="450" loading="lazy"></div>
+          <div class="photo photo--lift"><img src="images/controller-hands.jpg" alt="Close-up of a player's hands on a game controller, wearing a convention wristband" width="600" height="450" loading="lazy"></div>
         </div>
         <figcaption class="credit">Photos from @gathergameevents on Instagram</figcaption>
       </figure>
