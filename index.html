@@ -473,9 +473,9 @@
         <h2 id="recent-title">Where we've been</h2>
         <p class="lede">From anime festivals to comic cons, we bring a whole gaming space to the convention floor: tabletop tables, a drop-in console area and tournament brackets, all in one spot where strangers become teammates.</p>
         <ul class="cons" aria-label="Conventions we've played at">
+          <li><b>Ocala Comic Con</b><span>Ocala, Florida</span></li>
           <li><b>Bold Matsuri</b><span>Jacksonville's anime and cosplay festival</span></li>
           <li><b>Jax Pop Con Vol. 3</b><span>Pop culture con at the Jacksonville Main Library</span></li>
-          <li><b>Ocala Comic Con</b><span>Ocala, Florida</span></li>
         </ul>
         <p class="alt">Organizing a convention? <a href="#contact">Get in touch</a>.</p>
       </div>
@@ -611,9 +611,11 @@
     });
   })();
 
-  // Prototype contact form: validates on blur, shows a success state, sends nothing.
+  // Prototype contact form: checks fields only when "Send message" is pressed,
+  // then clears each error as it's fixed. Shows a success state, sends nothing.
   (function () {
     var form = document.getElementById('contact-form');
+    var attempted = false;
     var rules = {
       'f-name': function (v) { return v.trim() ? '' : 'Enter your name so we know who to reply to.'; },
       'f-email': function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Enter an email like name@example.com.'; },
@@ -628,10 +630,11 @@
       return !msg;
     }
     Object.keys(rules).forEach(function (id) {
-      document.getElementById(id).addEventListener('blur', function () { check(id); });
+      document.getElementById(id).addEventListener('input', function () { if (attempted) check(id); });
     });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      attempted = true;
       var firstBad = Object.keys(rules).filter(function (id) { return !check(id); })[0];
       if (firstBad) { document.getElementById(firstBad).focus(); return; }
       form.classList.add('done');
