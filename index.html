@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Gather &amp; Game Events</title>
-<meta name="description" content="Gather & Game hosts pop-up game nights and convention play spaces across Florida: tabletop one-shots, casual gaming areas and tournaments.">
+<meta name="description" content="Gather & Game runs gaming spaces at conventions across Florida: tabletop one-shots, casual gaming areas and tournaments.">
 <link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -225,20 +225,10 @@
   .events-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
   .events-foot p { color: #E3EBFF; }
 
-  /* Book */
-  .book { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
-  @media (max-width: 900px) { .book { grid-template-columns: 1fr; } }
-  .steps { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 1.25rem; counter-reset: step; }
-  .steps li { display: grid; grid-template-columns: 52px 1fr; gap: 1rem; counter-increment: step; }
-  .steps li::before {
-    content: counter(step);
-    display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
-    border: 2px solid var(--glyph); color: var(--glyph);
-    font: 900 1.6rem/1 var(--display);
-  }
-  .steps b { display: block; font-size: 1.15rem; }
-  .steps span { color: var(--paper-dim); font-size: 1rem; }
-  .for-who { margin-top: 2rem; color: var(--paper-dim); font-size: 1rem; }
+  /* Contact */
+  .contact { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+  @media (max-width: 900px) { .contact { grid-template-columns: 1fr; } }
+  .contact .alt { margin-top: 1.25rem; color: var(--paper-dim); }
 
   form { background: var(--ink-2); border: 1px solid rgba(39,196,245,.25); border-radius: 20px; padding: clamp(1.25rem, 3vw, 2rem); display: grid; gap: 1.1rem; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -257,7 +247,7 @@
   select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--paper-dim) 50%), linear-gradient(135deg, var(--paper-dim) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 14px) 50%; background-size: 6px 6px; background-repeat: no-repeat; }
   input[type="date"] { color-scheme: dark; }
   .err { color: #FF9C86; font-size: .9rem; min-height: 0; }
-  .field.invalid input, .field.invalid select { border-color: #FF7A5C; }
+  .field.invalid input, .field.invalid textarea { border-color: #FF7A5C; }
   form .btn { justify-self: start; }
   .sent { display: none; text-align: center; padding: 2rem 1rem; }
   .sent img { width: 72px; height: 72px; margin: 0 auto 1rem; }
@@ -320,7 +310,7 @@
         <li><a href="#hosts">Hosts</a></li>
       </ul>
     </nav>
-    <a class="btn btn--gold" href="#book">Book us</a>
+    <a class="btn btn--gold" href="#contact">Contact</a>
   </div>
 </header>
 
@@ -338,10 +328,10 @@
         <img class="half-r" src="images/logo-mark.png" alt="" width="230" height="230">
       </div>
       <h1 id="hero-title">Pull up a chair.</h1>
-      <p>Gather &amp; Game runs pop-up game nights and convention play spaces across Florida. Roll for initiative, grab a controller, or meet your next player two.</p>
+      <p>Gather &amp; Game runs the gaming spaces at conventions like Ocala Comic Con. Roll for initiative, grab a controller, or meet your next player two.</p>
       <div class="hero-actions">
-        <a class="btn btn--primary" href="#events">Find a game near you</a>
-        <a class="btn btn--ghost" href="#book">Bring us to your event</a>
+        <a class="btn btn--primary" href="#events">See where we'll be next</a>
+        <a class="btn btn--ghost" href="#contact">Get in touch</a>
       </div>
     </div>
   </section>
@@ -433,47 +423,43 @@
 
   <section class="band band--royal" id="events" aria-labelledby="events-title">
     <div class="wrap">
-      <h2 id="events-title">Upcoming games</h2>
-      <p class="lede">Show up solo or bring your crew. Every event has open seats for new players.</p>
+      <h2 id="events-title">Where to find us next</h2>
+      <p class="lede">Look for our gaming area at these conventions. Show up solo or bring your crew; there are always open seats for new players.</p>
       <ul class="events">
         <li class="event">
           <div class="date" aria-hidden="true"><small>NOV</small><b>15</b></div>
           <div>
-            <h3>Saturday game night pop-up <span class="tag">Sample</span></h3>
-            <p>Jacksonville, venue to be announced. D&amp;D one-shots and casual gaming.</p>
+            <h3>Next convention appearance <span class="tag">Sample</span></h3>
+            <p>Florida, convention to be announced. Tabletop one-shots, a casual gaming area and a tournament.</p>
           </div>
-          <a class="btn btn--gold" href="#" aria-label="RSVP for Saturday game night pop-up">RSVP</a>
+          <a class="btn btn--gold" href="#" aria-label="Event details for next convention appearance">Event details</a>
         </li>
         <li class="event">
           <div class="date" aria-hidden="true"><small>DEC</small><b>06</b></div>
           <div>
-            <h3>Holiday tournament night <span class="tag">Sample</span></h3>
-            <p>Jacksonville, venue to be announced. Bracket play and a Daggerheart table.</p>
+            <h3>Following convention appearance <span class="tag">Sample</span></h3>
+            <p>Florida, convention to be announced. Daggerheart and D&amp;D tables plus bracket play.</p>
           </div>
-          <a class="btn btn--gold" href="#" aria-label="RSVP for Holiday tournament night">RSVP</a>
+          <a class="btn btn--gold" href="#" aria-label="Event details for following convention appearance">Event details</a>
         </li>
       </ul>
       <div class="events-foot">
-        <p>New events get announced on Instagram first.</p>
+        <p>New convention dates get announced on Instagram first.</p>
         <a class="btn btn--ghost" href="https://www.instagram.com/gathergameevents" target="_blank" rel="noopener">Follow @gathergameevents</a>
       </div>
     </div>
   </section>
 
-  <section class="band band--ink" id="book" aria-labelledby="book-title">
-    <div class="wrap book">
+  <section class="band band--ink" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact">
       <div>
-        <h2 id="book-title">Bring the game to your event</h2>
-        <p class="lede">We bring a ready-to-play gaming space to conventions, game stores, libraries, schools and private events. You bring the people.</p>
-        <ol class="steps">
-          <li><div><b>Tell us about your crowd</b><span>Who's coming, how many, and what kind of space you have.</span></div></li>
-          <li><div><b>We plan the games</b><span>Tabletop tables, a casual area, a tournament, or a mix of all three.</span></div></li>
-          <li><div><b>We show up and run it</b><span>Game masters, consoles and setup included, so your guests just play.</span></div></li>
-        </ol>
+        <h2 id="contact-title">Get in touch</h2>
+        <p class="lede">Have a question about a convention we'll be at, or want to talk about bringing Gather &amp; Game to your con? Send us a message.</p>
+        <p class="alt">Prefer DMs? Find us on Instagram at <a href="https://www.instagram.com/gathergameevents" target="_blank" rel="noopener">@gathergameevents</a>.</p>
       </div>
 
-      <form id="book-form" novalidate aria-labelledby="form-title">
-        <h3 id="form-title" style="font-size:1.8rem">Request a booking</h3>
+      <form id="contact-form" novalidate aria-labelledby="form-title">
+        <h3 id="form-title" style="font-size:1.8rem">Send a message</h3>
         <div class="row">
           <div class="field">
             <label for="f-name">Your name</label>
@@ -486,38 +472,17 @@
             <span class="err" id="e-email" role="alert"></span>
           </div>
         </div>
-        <div class="row">
-          <div class="field">
-            <label for="f-type">Type of event</label>
-            <select id="f-type" name="type" required aria-describedby="e-type">
-              <option value="">Choose one</option>
-              <option>Convention</option>
-              <option>Game store or venue pop-up</option>
-              <option>Library or school</option>
-              <option>Private or team event</option>
-              <option>Something else</option>
-            </select>
-            <span class="err" id="e-type" role="alert"></span>
-          </div>
-          <div class="field">
-            <label for="f-date">Event date <span class="opt">(optional)</span></label>
-            <input id="f-date" name="date" type="date">
-          </div>
-        </div>
         <div class="field">
-          <label for="f-count">Expected players <span class="opt">(optional)</span></label>
-          <input id="f-count" name="count" type="number" min="1" inputmode="numeric">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" required aria-describedby="e-message"></textarea>
+          <span class="err" id="e-message" role="alert"></span>
         </div>
-        <div class="field">
-          <label for="f-notes">Anything else? <span class="opt">(optional)</span></label>
-          <textarea id="f-notes" name="notes"></textarea>
-        </div>
-        <button class="btn btn--primary" type="submit">Send request</button>
+        <button class="btn btn--primary" type="submit">Send message</button>
 
         <div class="sent" role="status" tabindex="-1">
           <img src="images/logo-mark.png" alt="" width="72" height="72" loading="lazy">
-          <h3>Request sent</h3>
-          <p>We'll reply within two days to start planning your games.</p>
+          <h3>Message sent</h3>
+          <p>Thanks for reaching out. We'll get back to you by email.</p>
         </div>
       </form>
     </div>
@@ -566,13 +531,13 @@
 </footer>
 
 <script>
-  // Prototype booking form: validates on blur, shows a success state, sends nothing.
+  // Prototype contact form: validates on blur, shows a success state, sends nothing.
   (function () {
-    var form = document.getElementById('book-form');
+    var form = document.getElementById('contact-form');
     var rules = {
       'f-name': function (v) { return v.trim() ? '' : 'Enter your name so we know who to reply to.'; },
       'f-email': function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Enter an email like name@example.com.'; },
-      'f-type': function (v) { return v ? '' : 'Choose the type of event.'; }
+      'f-message': function (v) { return v.trim() ? '' : 'Write a message so we know how to help.'; }
     };
     function check(id) {
       var el = document.getElementById(id);
