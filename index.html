@@ -194,6 +194,10 @@
     letter-spacing: .02em;
     line-height: .92;
   }
+  /* The period hangs outside the centered line so the words themselves sit
+     under the middle of the logo. The negative margin cancels the period's
+     width, so it takes no room but stays attached to "chair" when wrapping. */
+  .hero h1 .hang { margin-right: -.2227em; }
   .hero p { margin: 1.25rem auto 0; color: var(--paper-dim); font-size: clamp(1.125rem, 2vw, 1.3rem); max-width: 40ch; }
   .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 2rem; }
 
@@ -388,7 +392,7 @@
         <img class="half-l" src="images/logo-mark.png" alt="" width="230" height="230">
         <img class="half-r" src="images/logo-mark.png" alt="" width="230" height="230">
       </div>
-      <h1 id="hero-title"><span class="sr-only">Gather &amp; Game Events: </span>Pull up a chair.</h1>
+      <h1 id="hero-title"><span class="sr-only">Gather &amp; Game Events: </span>Pull up a chair<span class="hang">.</span></h1>
       <p>Gather &amp; Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida. Roll for initiative, grab a controller, or meet your next player two.</p>
       <div class="hero-actions">
         <a class="btn btn--primary" href="#events">See where we'll be next</a>
