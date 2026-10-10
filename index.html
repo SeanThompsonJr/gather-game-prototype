@@ -289,6 +289,7 @@
   }
   .slot h3 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-stretch: 85%; }
   .slot p { margin-top: .35rem; color: #33405E; font-size: 1rem; line-height: 1.4; }
+  .tag { display: inline-block; vertical-align: middle; margin-left: .5rem; padding: .15rem .5rem; border-radius: 6px; background: var(--gold); color: var(--ink); font: 700 .8rem/1.2 var(--body); letter-spacing: 0; }
   .pill {
     display: inline-block; min-width: 11rem; text-align: center;
     background: var(--heart-btn); color: #fff; border-radius: 999px;
@@ -341,14 +342,13 @@
   form.done .sent { display: block; }
 
   /* Hosts */
-  .hosts { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin-top: 2.5rem; }
+  .hosts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; align-items: center; margin-top: 2.5rem; }
   .host { background: var(--royal-deep); border-radius: 20px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; }
   .host:last-child { flex-direction: row-reverse; text-align: right; }
   .avatar { flex: none; width: 72px; height: 72px; border-radius: 50%; background: var(--ink); border: 3px solid var(--glyph); display: grid; place-items: center; color: var(--glyph); }
   .avatar svg { width: 36px; height: 36px; }
   .host a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; font-size: 1.15rem; color: var(--paper); }
   .host p { color: #E3EBFF; font-size: .95rem; margin-top: .2rem; }
-  .hosts > svg { width: 44px; color: var(--heart); }
   @media (max-width: 720px) {
     .hosts { grid-template-columns: 1fr; justify-items: center; }
     .host, .host:last-child { width: 100%; flex-direction: row; text-align: left; }
@@ -376,10 +376,9 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="d20" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2 21 7v10l-9 5-9-5V7z"/><path d="M12 2 7.5 9h9z M7.5 9 3 17h18l-4.5-8 M7.5 9 12 22l4.5-13"/></g></symbol>
   <symbol id="person" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.2-4 4.2-6 8-6s6.8 2 8 6"/></g></symbol>
-  <symbol id="heartIcon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21C5 16.5 2 12.9 2 9.2 2 6.3 4.2 4 7 4c1.9 0 3.6 1 5 2.8C13.4 5 15.1 4 17 4c2.8 0 5 2.3 5 5.2 0 3.7-3 7.3-10 11.8z"/></symbol>
 </svg>
 
-<aside aria-label="Prototype notice"><p class="proto">Concept prototype. Host names and bios are placeholders.</p></aside>
+<aside aria-label="Prototype notice"><p class="proto">Concept prototype. Event schedule, host names and bios are placeholders.</p></aside>
 
 <header class="nav">
   <div class="wrap">
@@ -412,7 +411,7 @@
         <img class="half-r" src="images/logo-mark.png" alt="" width="230" height="230">
       </div>
       <h1 id="hero-title"><span class="sr-only">Gather &amp; Game Events: </span>Pull up a chair<span class="hang">.</span></h1>
-      <p>Gather &amp; Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida and beyond. Roll for initiative, grab a controller, or meet your next player two.</p>
+      <p>Gather &amp; Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida. Roll for initiative, grab a controller, or jump into a game already in progress.</p>
       <div class="hero-actions">
         <a class="btn btn--primary" href="#events">See our event schedule</a>
         <a class="btn btn--ghost" href="#contact">Get in touch</a>
@@ -511,40 +510,33 @@
     <div class="wrap">
       <div class="schedule-head">
         <h2 id="events-title">Event schedule</h2>
-        <span class="month">October<br>2025</span>
+        <span class="month">Coming<br>up</span>
       </div>
-      <p class="lede">Here's a recent month on the road. Each new schedule is posted on Instagram first, so follow along to see where we'll set up next.</p>
-      <ol class="schedule" aria-label="October 2025 events">
+      <p class="lede">Look for our gaming area at these events. Show up solo or bring your crew; there are always open seats for new players.</p>
+      <ol class="schedule" aria-label="Upcoming events">
         <li class="slot">
           <div>
-            <h3>Draw Together</h3>
-            <p>Daily Dose Craft Bar<br>Jacksonville, FL</p>
+            <h3>Convention name <span class="tag">Sample</span></h3>
+            <p>Venue name<br>City, State</p>
           </div>
-          <time class="pill" datetime="2025-10-04">October 4</time>
+          <time class="pill" datetime="2026-11-07">Nov 7 – 8</time>
         </li>
         <li class="slot">
           <div>
-            <h3>WasabiCON</h3>
-            <p>Prime F. Osborn III Convention Center<br>Jacksonville, FL</p>
+            <h3>Convention name <span class="tag">Sample</span></h3>
+            <p>Venue name<br>City, State</p>
           </div>
-          <time class="pill" datetime="2025-10-10">Oct 10 – 12</time>
+          <time class="pill" datetime="2026-11-21">November 21</time>
         </li>
         <li class="slot">
           <div>
-            <h3>Jax Gaming Club</h3>
-            <p>Daily Dose Craft Bar<br>Jacksonville, FL</p>
+            <h3>Convention name <span class="tag">Sample</span></h3>
+            <p>Venue name<br>City, State</p>
           </div>
-          <time class="pill" datetime="2025-10-18">October 18</time>
-        </li>
-        <li class="slot">
-          <div>
-            <h3>DreamHack Atlanta</h3>
-            <p>Georgia World Congress Center<br>Atlanta, GA</p>
-          </div>
-          <time class="pill" datetime="2025-10-31">Oct 31 – Nov 2</time>
+          <time class="pill" datetime="2026-12-05">Dec 5 – 7</time>
         </li>
       </ol>
-      <a class="schedule-cta" href="https://www.instagram.com/gathergameevents" target="_blank" rel="noopener">Gather with us at the next one: follow @gathergameevents<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="schedule-cta" href="https://www.instagram.com/gathergameevents" target="_blank" rel="noopener">New dates drop on Instagram first: follow @gathergameevents<span class="sr-only"> (opens in a new tab)</span></a>
     </div>
   </section>
 
@@ -589,7 +581,7 @@
   <section class="band band--royal" id="hosts" aria-labelledby="hosts-title">
     <div class="wrap">
       <h2 id="hosts-title">Your hosts</h2>
-      <p class="lede">Two people who'd rather be playing with you than without you.</p>
+      <p class="lede">The two people who set up the tables, run the games and keep every seat filled.</p>
       <div class="hosts">
         <div class="host">
           <div class="avatar" aria-hidden="true"><svg><use href="#person"/></svg></div>
@@ -598,7 +590,6 @@
             <p>Co-host. Bio and photo coming soon.</p>
           </div>
         </div>
-        <svg aria-hidden="true"><use href="#heartIcon"/></svg>
         <div class="host">
           <div class="avatar" aria-hidden="true"><svg><use href="#person"/></svg></div>
           <div>
