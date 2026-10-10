@@ -271,24 +271,43 @@
   .photo::before { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; box-shadow: inset 0 0 0 2px rgba(39,196,245,.35); }
   .credit { font-size: .85rem; color: var(--paper-dim); margin-top: .25rem; }
 
-  /* Events */
-  .events { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; gap: .75rem; }
-  .event {
-    display: grid; grid-template-columns: auto 1fr auto; gap: 1.25rem; align-items: center;
-    background: var(--royal-deep); border-radius: 16px; padding: 1rem 1.25rem;
+  /* Event schedule: mirrors the monthly schedule graphics they post
+     (white cards, heavy ink outline, hard offset shadow, red date pills) */
+  .schedule-head { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
+  .month {
+    display: inline-grid; place-items: center; transform: rotate(-6deg);
+    background: var(--heart-btn); color: #fff; border: 3px solid var(--ink); border-radius: 50%;
+    padding: .7rem 1.6rem; font: 900 1.35rem/1 var(--display); font-stretch: 85%; text-align: center;
+    box-shadow: 4px 4px 0 var(--ink);
   }
-  .date { display: grid; place-items: center; width: 76px; height: 76px; border-radius: 12px; background: var(--paper); color: var(--ink); line-height: 1; }
-  .date small { font-weight: 700; font-size: .85rem; text-transform: uppercase; }
-  .date b { font: 900 2rem/1 var(--display); font-stretch: 75%; }
-  .event h3 { font-size: 1.5rem; }
-  .event p { color: #E3EBFF; font-size: 1rem; margin-top: .3rem; }
-  .tag { display: inline-block; font-size: .8rem; font-weight: 700; background: var(--gold); color: var(--ink); border-radius: 6px; padding: .1rem .45rem; margin-left: .5rem; vertical-align: middle; font-family: var(--body); letter-spacing: 0; }
-  @media (max-width: 640px) {
-    .event { grid-template-columns: auto 1fr; }
-    .event .btn { grid-column: 1 / -1; }
+  .schedule { list-style: none; margin: 2.25rem 0 0; padding: 0; display: grid; gap: 1.1rem; max-width: 900px; }
+  .slot {
+    display: grid; grid-template-columns: 1fr auto; gap: .75rem 1.5rem; align-items: center;
+    background: #fff; color: var(--ink);
+    border: 3px solid var(--ink); border-radius: 18px; box-shadow: 6px 6px 0 var(--ink);
+    padding: 1.1rem 1.4rem;
   }
-  .events-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
-  .events-foot p { color: #E3EBFF; }
+  .slot h3 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-stretch: 85%; }
+  .slot p { margin-top: .35rem; color: #33405E; font-size: 1rem; line-height: 1.4; }
+  .pill {
+    display: inline-block; min-width: 11rem; text-align: center;
+    background: var(--heart-btn); color: #fff; border-radius: 999px;
+    padding: .55rem 1.2rem; font-weight: 700; font-size: 1.05rem; white-space: nowrap;
+  }
+  @media (max-width: 560px) {
+    .slot { grid-template-columns: 1fr; }
+    .pill { justify-self: start; min-width: 0; }
+  }
+  .schedule-cta {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    max-width: 900px; min-height: 56px; margin-top: 1.75rem; padding: .9rem 1.25rem;
+    background: var(--heart-btn); color: #fff; text-decoration: none;
+    border: 3px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--ink);
+    font-weight: 700; font-size: 1.1rem;
+    transition: transform .15s var(--ease-out), box-shadow .15s var(--ease-out), background-color .2s;
+  }
+  .schedule-cta:hover { background: #BF2C0C; }
+  .schedule-cta:active { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--ink); }
 
   /* Contact */
   .contact { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
@@ -360,7 +379,7 @@
   <symbol id="heartIcon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21C5 16.5 2 12.9 2 9.2 2 6.3 4.2 4 7 4c1.9 0 3.6 1 5 2.8C13.4 5 15.1 4 17 4c2.8 0 5 2.3 5 5.2 0 3.7-3 7.3-10 11.8z"/></symbol>
 </svg>
 
-<aside aria-label="Prototype notice"><p class="proto">Concept prototype. Event dates, host bios and photos are placeholders.</p></aside>
+<aside aria-label="Prototype notice"><p class="proto">Concept prototype. Host names and bios are placeholders.</p></aside>
 
 <header class="nav">
   <div class="wrap">
@@ -393,9 +412,9 @@
         <img class="half-r" src="images/logo-mark.png" alt="" width="230" height="230">
       </div>
       <h1 id="hero-title"><span class="sr-only">Gather &amp; Game Events: </span>Pull up a chair<span class="hang">.</span></h1>
-      <p>Gather &amp; Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida. Roll for initiative, grab a controller, or meet your next player two.</p>
+      <p>Gather &amp; Game brings tabletop RPGs, console gaming and tournaments to anime and pop culture conventions in Florida and beyond. Roll for initiative, grab a controller, or meet your next player two.</p>
       <div class="hero-actions">
-        <a class="btn btn--primary" href="#events">See where we'll be next</a>
+        <a class="btn btn--primary" href="#events">See our event schedule</a>
         <a class="btn btn--ghost" href="#contact">Get in touch</a>
       </div>
       <button class="echo-toggle" type="button" aria-pressed="false">Pause background motion</button>
@@ -423,13 +442,13 @@
             <li>Daggerheart</li>
             <li>Marvel Multiverse RPG</li>
           </ul>
-          <ul class="quests" aria-label="Adventures run at Ocala Comic Con">
+          <ul class="quests" aria-label="Recent adventures">
             <li><svg aria-hidden="true"><use href="#d20"/></svg><b>Cross your Heart</b></li>
             <li><svg aria-hidden="true"><use href="#d20"/></svg><b>The Search for the Fantastic Four</b></li>
             <li><svg aria-hidden="true"><use href="#d20"/></svg><b>Tomb of the Unknown</b></li>
             <li><svg aria-hidden="true"><use href="#d20"/></svg><b>Intrigue in the Road House</b></li>
           </ul>
-          <p class="note">Four adventures over two days at Ocala Comic Con. Your next great story starts here.</p>
+          <p class="note">A few recent one-shots. The adventures change from con to con, and your next great story starts at our table.</p>
         </article>
 
         <article class="couch" aria-labelledby="couch-title">
@@ -441,13 +460,13 @@
             <li><b>P3</b>Open</li>
             <li><b>P4</b>Open</li>
           </ul>
-          <p class="games">Mario Kart, Dragon Ball, Avatar Legends and more fan-favorite video games and anime fighting games.</p>
+          <p class="games">Party games like Mario Kart, anime fighting games and other fan favorites. The lineup changes from con to con.</p>
         </article>
 
         <article class="bracket" aria-labelledby="br-title">
           <div>
             <h3 id="br-title">Tournaments</h3>
-            <p>Bracket play with a crowd behind you. Our Avatar Legends: The Fighting Game bracket packed the casual area at Ocala Comic Con.</p>
+            <p>Bracket play with a crowd behind you. Step up, play your way through the bracket and see who takes it home.</p>
           </div>
           <svg class="bracket-art" viewBox="0 0 150 104" aria-hidden="true">
             <path d="M38 10h10v18h-10 M48 19h10 M38 76h10v18h-10 M48 85h10 M78 19h8v66h-8 M86 52h12" fill="none" stroke="#F6B92B" stroke-width="2.5" stroke-linejoin="round"/>
@@ -490,30 +509,42 @@
 
   <section class="band band--royal" id="events" aria-labelledby="events-title">
     <div class="wrap">
-      <h2 id="events-title">Where to find us next</h2>
-      <p class="lede">Look for our gaming area at these conventions. Show up solo or bring your crew; there are always open seats for new players.</p>
-      <ul class="events">
-        <li class="event">
-          <time class="date" datetime="2026-11-15"><small>Nov</small><b>15</b></time>
-          <div>
-            <h3>Next convention appearance <span class="tag">Sample</span></h3>
-            <p>Florida, convention to be announced. Tabletop one-shots, a casual gaming area and a tournament.</p>
-          </div>
-          <a class="btn btn--gold" href="#" aria-label="Event details for next convention appearance">Event details</a>
-        </li>
-        <li class="event">
-          <time class="date" datetime="2026-12-06"><small>Dec</small><b>06</b></time>
-          <div>
-            <h3>Following convention appearance <span class="tag">Sample</span></h3>
-            <p>Florida, convention to be announced. Daggerheart and D&amp;D tables plus bracket play.</p>
-          </div>
-          <a class="btn btn--gold" href="#" aria-label="Event details for following convention appearance">Event details</a>
-        </li>
-      </ul>
-      <div class="events-foot">
-        <p>New convention dates get announced on Instagram first.</p>
-        <a class="btn btn--ghost" href="https://www.instagram.com/gathergameevents" target="_blank" rel="noopener">Follow @gathergameevents<span class="sr-only"> (opens in a new tab)</span></a>
+      <div class="schedule-head">
+        <h2 id="events-title">Event schedule</h2>
+        <span class="month">October<br>2025</span>
       </div>
+      <p class="lede">Here's a recent month on the road. Each new schedule is posted on Instagram first, so follow along to see where we'll set up next.</p>
+      <ol class="schedule" aria-label="October 2025 events">
+        <li class="slot">
+          <div>
+            <h3>Draw Together</h3>
+            <p>Daily Dose Craft Bar<br>Jacksonville, FL</p>
+          </div>
+          <time class="pill" datetime="2025-10-04">October 4</time>
+        </li>
+        <li class="slot">
+          <div>
+            <h3>WasabiCON</h3>
+            <p>Prime F. Osborn III Convention Center<br>Jacksonville, FL</p>
+          </div>
+          <time class="pill" datetime="2025-10-10">Oct 10 – 12</time>
+        </li>
+        <li class="slot">
+          <div>
+            <h3>Jax Gaming Club</h3>
+            <p>Daily Dose Craft Bar<br>Jacksonville, FL</p>
+          </div>
+          <time class="pill" datetime="2025-10-18">October 18</time>
+        </li>
+        <li class="slot">
+          <div>
+            <h3>DreamHack Atlanta</h3>
+            <p>Georgia World Congress Center<br>Atlanta, GA</p>
+          </div>
+          <time class="pill" datetime="2025-10-31">Oct 31 – Nov 2</time>
+        </li>
+      </ol>
+      <a class="schedule-cta" href="https://www.instagram.com/gathergameevents" target="_blank" rel="noopener">Gather with us at the next one: follow @gathergameevents<span class="sr-only"> (opens in a new tab)</span></a>
     </div>
   </section>
 
